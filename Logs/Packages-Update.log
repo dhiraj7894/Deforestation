@@ -1,0 +1,10 @@
+
+=== Sat Mar  5 13:43:30 2022
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.collab-proxy from version 1.13.5 to 1.15.12
+  com.unity.ide.visualstudio from version 2.0.11 to 2.0.14
+  com.unity.render-pipelines.universal from version 10.7.0 to 10.8.1
