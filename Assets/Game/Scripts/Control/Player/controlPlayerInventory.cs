@@ -101,11 +101,7 @@ namespace Stone.control
             if (other.gameObject.CompareTag("Sell"))
             {
                 SellPoint = GameObject.Find("SellPoint").transform;
-
-                if (GetComponent<Stone.movement.movePlayer>().direction.magnitude <= 0.1f)
-                    SellItemInCart = true;
-                if(GetComponent<Stone.movement.movePlayer>().direction.magnitude >= 0.1f)
-                    SellItemInCart = false;
+                SellItemInCart = true;
             }
         }
         private void OnTriggerExit(Collider other)

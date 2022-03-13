@@ -9,6 +9,7 @@ TagManager:
   - Woods
   - Ground
   - Sell
+  - upgrade
   layers:
   - Default
   - TransparentFX

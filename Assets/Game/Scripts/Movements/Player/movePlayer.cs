@@ -29,7 +29,6 @@ namespace Stone.movement
         
         void Update()
         {
-            
             //transform.localPosition = new Vector3(transform.localPosition.x, 1f, transform.localPosition.z);
         }
         private void FixedUpdate()
