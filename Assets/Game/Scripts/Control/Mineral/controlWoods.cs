@@ -3,40 +3,46 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-namespace Stone.control
+namespace Stone.Control
 {
     public class controlWoods : MonoBehaviour
     {
-        public Vector3 startPos;
         public Vector3 endPos;
-        public float speed = 5;
+        public float moveSpeed = 5;
         public bool startMove;
+        public float WoodCost = 5;
         private void Start()
         {
             
         }
         private void Update()
         {
+            moveObject();
+
+        }
+
+
+
+        public void moveObject()
+        {
             if (startMove)
             {
-                transform.localPosition = Vector3.MoveTowards(transform.localPosition, endPos, speed * Time.deltaTime);
+                transform.localPosition = Vector3.MoveTowards(transform.localPosition, endPos, moveSpeed * Time.deltaTime);
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.identity, 20 * Time.deltaTime);
-                
+
                 GetComponent<Rigidbody>().isKinematic = true;
                 GetComponent<Rigidbody>().useGravity = false;
                 GetComponent<Collider>().isTrigger = true;
             }
-
-            StopMove();
-        }
-
-        public void StopMove()
-        {
             if (transform.localPosition == endPos)
             {
+                transform.localPosition = endPos;
                 transform.rotation = Quaternion.identity;
-                if(startMove)
+                if (startMove)
+                {
+                    GetComponent<Collider>().isTrigger = false;
                     startMove = false;
+                }
             }
         }
         private void OnCollisionEnter(Collision collision)
@@ -51,6 +57,7 @@ namespace Stone.control
         {
             if (other.gameObject.CompareTag("Sell"))
             {
+                FindObjectOfType<Core.GameManager>().maxCash += WoodCost;
                 Destroy(this.gameObject);
             }
         }

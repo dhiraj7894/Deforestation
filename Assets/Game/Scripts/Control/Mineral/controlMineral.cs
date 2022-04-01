@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Stone.control
+namespace Stone.Control
 {
     public class controlMineral : MonoBehaviour
     {

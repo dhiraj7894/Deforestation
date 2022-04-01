@@ -54,8 +54,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
-    <Analyzer Include="F:\Stoner\Assets\Assets\Plugins\Demigiant\DOTween\DOTween.dll" />
-    <Analyzer Include="F:\Stoner\Assets\Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
@@ -81,9 +79,10 @@
     <Compile Include="Assets\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs" />
     <Compile Include="Assets\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs" />
     <Compile Include="Assets\Game\Scripts\Control\Mineral\controlShop.cs" />
+    <Compile Include="Assets\Game\Scripts\Control\UI\controlUI.cs" />
     <Compile Include="Assets\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs" />
     <Compile Include="Assets\Game\Scripts\Control\Mineral\controlMineral.cs" />
-    <Compile Include="Assets\Game\Scripts\Control\UI\controlUI.cs" />
+    <Compile Include="Assets\Game\Scripts\Core\GameManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Assets\TextMesh Pro\Shaders\TMPro.cginc" />
