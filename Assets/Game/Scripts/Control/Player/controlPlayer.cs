@@ -58,7 +58,7 @@ namespace Stone.Control
         void Start()
         {
             GameManager = FindObjectOfType<Core.GameManager>();
-            sCartLimitIndicator.maxValue = lCart;
+            sCartLimitIndicator.maxValue = CartLimitData;
             cutterCurrentSize = CutterSize;
             cutterCurrentPos = CutterPos;
             LimitSet();
@@ -120,6 +120,7 @@ namespace Stone.Control
             {
                 GameManager.maxCash -= GameManager.CartLimit;
                 CartLimitData += CartUpdateCount;
+                sCartLimitIndicator.maxValue = CartLimitData;
                 sCartLimit.value = CartLimitData;
             }           
         }

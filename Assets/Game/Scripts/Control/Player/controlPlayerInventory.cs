@@ -40,6 +40,7 @@ namespace Stone.Control
                     x -= Time.deltaTime;
                 if (x <= 0)
                 {
+                    clear();
                     Cart[Cart.Count - 1].transform.parent = null;
                     Cart[Cart.Count - 1].transform.GetComponent<controlWoods>().endPos = SellPoint.position;
                     Cart[Cart.Count - 1].transform.GetComponent<controlWoods>().moveSpeed += 35;
@@ -49,7 +50,16 @@ namespace Stone.Control
                 }                
             }
         }
-
+        void clear()
+        {
+            for (int i = 0; i <= Cart.Count - 1; i++)
+            {
+                if (Cart[i] == null)
+                {
+                    Cart.Remove(Cart[i]);
+                }
+            }
+        }
         public void cartLimitUpdator()
         {
             if(Cart.Count - 1 > controlPlayer.sCartLimitIndicator.value)
