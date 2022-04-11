@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Stone.Control
+namespace Wood.Control
 {
     public class controlMineral : MonoBehaviour
     {
         public float Health;
         public bool isMineralDown;
+        public bool isRemove;
         public float FallingTime=0.5f;
         public GameObject Partical;
         public GameObject Mineral;
@@ -22,40 +23,29 @@ namespace Stone.Control
         }
         private void Update()
         {
-            if (Health <= 0)
-            {
-                if(transform.GetComponent<Rigidbody>() == null)
-                    this.gameObject.AddComponent<Rigidbody>();                
-                GetComponent<Rigidbody>().AddForce(Player.forward * 0.1f, ForceMode.Impulse);
-                this.gameObject.layer = 9;
-                StartCoroutine(SpwnObjects(FallingTime));
-
-                /*                M.GetComponent<Rigidbody>().AddForce(M.transform.up *5, ForceMode.Impulse);
-                                M.GetComponent<Rigidbody>().AddForce(M.transform.right * 5, ForceMode.Impulse);*/
-            }
-         /*   if (!isMineralDown)
+            if (Health <= 0 && !isRemove)
             {
                 if(transform.GetComponent<Rigidbody>() == null)
                     this.gameObject.AddComponent<Rigidbody>();
+                GetComponent<Rigidbody>().angularDrag = 0;
+                GetComponent<Rigidbody>().AddForce(Player.forward * 0.05f, ForceMode.Impulse);                
+                this.gameObject.layer = 9;
+                StartCoroutine(SpwnObjects(FallingTime));
             }
-
-            if (isMineralDown)
+            if (isRemove)
             {
-                if(transform.GetComponent<Rigidbody>() != null)
-                {
-                    Destroy(transform.GetComponent<Rigidbody>());
-                }
+                if (transform.GetComponent<Rigidbody>() == null)
+                    this.gameObject.AddComponent<Rigidbody>();                
+                this.gameObject.layer = 9;
+                StartCoroutine(SpwnObjects(FallingTime));
             }
-            isMineralDown = Physics.CheckSphere(DC.position, 0.01f, L);*/
         }   
-
-
 
         IEnumerator SpwnObjects(float t)
         {
             yield return new WaitForSeconds(t);
-            Destroy(this.gameObject);
             GameObject M = Instantiate(Mineral, transform.position, Quaternion.Euler(10, 50, 65), GameObject.Find("Mineral").transform);
+            Destroy(this.gameObject);
             Destroy(Instantiate(Partical, transform.position, Quaternion.identity, GameObject.Find("Mine Partical").transform), 1f);
         }
     }

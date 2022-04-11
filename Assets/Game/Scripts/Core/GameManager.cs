@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-namespace Stone.Core
+namespace Wood.Core
 {
     public class GameManager : MonoBehaviour
     {
@@ -26,7 +26,9 @@ namespace Stone.Core
         [Space(5)]
         public float Rotation = 35f;
         public TextMeshProUGUI pRotation;
-        
+
+        [Space(10)]
+        public GameObject Bridge;
         void Start()
         {
             currentCash = maxCash;

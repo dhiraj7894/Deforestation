@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-namespace Stone.Control
+namespace Wood.Control
 {
     public class controlWoods : MonoBehaviour
     {
         public Vector3 endPos;
         public float moveSpeed = 5;
-        public bool startMove;
+
         public float WoodCost = 5;
+        public bool startMove;
+        public bool isDestroy;
         private void Start()
         {
             
@@ -18,6 +20,8 @@ namespace Stone.Control
         private void Update()
         {
             moveObject();
+            if (isDestroy)
+                Destroy(this.gameObject, 0.1f);
 
         }
 

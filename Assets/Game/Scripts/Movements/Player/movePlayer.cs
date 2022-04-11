@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Stone.Move
+namespace Wood.Move
 {
     public class movePlayer : MonoBehaviour
     {

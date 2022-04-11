@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Stone.Control
+namespace Wood.Control
 {
     public class controlPlayerInventory : MonoBehaviour
     {
@@ -46,7 +46,7 @@ namespace Stone.Control
                     Cart[Cart.Count - 1].transform.GetComponent<controlWoods>().moveSpeed += 35;
                     Cart[Cart.Count - 1].transform.GetComponent<controlWoods>().startMove = true;
                     Cart.Remove(Cart[Cart.Count - 1]);
-                    x = 0.05f;
+                    x = 0.01f;
                 }                
             }
         }

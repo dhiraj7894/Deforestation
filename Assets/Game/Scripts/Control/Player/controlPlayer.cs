@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
-namespace Stone.Control
+namespace Wood.Control
 {
     public class controlPlayer : MonoBehaviour
     {
@@ -46,6 +47,10 @@ namespace Stone.Control
         public Slider sCartLimit;
         public Slider sCartLimitIndicator;
 
+        [Header("Mahcine Text")]
+        [Space(10)]
+        public TextMeshProUGUI tCartLimitIndicator;
+
         [Header("Cutter")]
         [Space(10)]
         public List<GameObject> CutterLevel = new List<GameObject>();
@@ -70,7 +75,8 @@ namespace Stone.Control
             sizeIncreser();
             spikeUpdater();
             StrengthCalculator();
-            CutterSizeController(cutterCurrentSize, cutterCurrentPos);         
+            CutterSizeController(cutterCurrentSize, cutterCurrentPos);
+            tCartLimitIndicator.text = sCartLimitIndicator.value + " / " + sCartLimitIndicator.maxValue.ToString("N0");
         }
 
         void LimitSet()

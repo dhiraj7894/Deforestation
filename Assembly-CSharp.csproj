@@ -59,16 +59,20 @@
     <Compile Include="Assets\Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
     <Compile Include="Assets\Game\Scripts\Control\Player\controlPlayerInventory.cs" />
+    <Compile Include="Assets\Game\Scripts\Core\GameManager.cs" />
     <Compile Include="Assets\Game\Scripts\Control\Mineral\controlWoods.cs" />
     <Compile Include="Assets\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs" />
+    <Compile Include="Assets\Game\Scripts\Control\UI\controlProgressBar.cs" />
     <Compile Include="Assets\Default\Scripts\SimpleCameraController.cs" />
     <Compile Include="Assets\Game\Scripts\Control\Player\controlPlayer.cs" />
     <Compile Include="Assets\Game\Scripts\Control\Player\controlPlayerUpgrades.cs" />
     <Compile Include="Assets\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
     <Compile Include="Assets\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleEPOOutline.cs" />
     <Compile Include="Assets\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs" />
+    <Compile Include="Assets\Game\Scripts\Core\LevelProgress.cs" />
     <Compile Include="Assets\Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
+    <Compile Include="Assets\Game\Scripts\Control\Automatic Cart\controlSpwanCart.cs" />
     <Compile Include="Assets\Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
     <Compile Include="Assets\Game\Scripts\Movements\Player\movePlayer.cs" />
     <Compile Include="Assets\Default\TutorialInfo\Scripts\Readme.cs" />
@@ -76,13 +80,17 @@
     <Compile Include="Assets\Game\Scripts\Control\Player\controlCutter.cs" />
     <Compile Include="Assets\Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs" />
+    <Compile Include="Assets\Game\Scripts\Movements\ACart\moveACart.cs" />
     <Compile Include="Assets\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs" />
     <Compile Include="Assets\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs" />
+    <Compile Include="Assets\Game\Scripts\Control\Automatic Cart\controlACartInventory.cs" />
     <Compile Include="Assets\Game\Scripts\Control\Mineral\controlShop.cs" />
     <Compile Include="Assets\Game\Scripts\Control\UI\controlUI.cs" />
+    <Compile Include="Assets\Game\Scripts\Control\Automatic Cart\controlPathTreeRemover.cs" />
     <Compile Include="Assets\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs" />
     <Compile Include="Assets\Game\Scripts\Control\Mineral\controlMineral.cs" />
-    <Compile Include="Assets\Game\Scripts\Core\GameManager.cs" />
+    <Compile Include="Assets\Game\Scripts\Control\Automatic Cart\controlACartPathPoints.cs" />
+    <Compile Include="Assets\Game\Scripts\Core\LevelManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -704,6 +712,9 @@
     </Reference>
     <Reference Include="Unity.Searcher.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
